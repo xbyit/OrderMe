@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Order System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+
+        body { margin: 0; min-height: 100vh; display: flex; justify-content: center; align-items: center; transition: background 0.5s; }
+
+        body.light { background: linear-gradient(135deg, #f3f4f6, #e5e7eb); color: #1f2933; }
+        body.dark { background: linear-gradient(135deg, #1f2933, #111827); color: #f3f4f6; }
+
+        .container {
+            width: 100%; max-width: 420px; padding: 30px; border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease; transition: background 0.5s, color 0.5s;
+        }
+        body.light .container { background: #ffffff; color: #1f2933; }
+        body.dark .container { background: #1f1f2b; color: #f3f4f6; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .header { text-align: center; margin-bottom: 25px; }
+        .header h1 { margin: 0; font-size: 28px; }
+        .header p { margin-top: 8px; font-size: 14px; }
+
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 6px; font-weight: 600; }
+        input, textarea {
+            width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid #d1d5db;
+            font-size: 14px; transition: 0.3s ease;
+            background: inherit; color: inherit;
+        }
+        input:focus, textarea:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); outline: none; }
+        textarea { resize: none; min-height: 120px; }
+
+        .btn {
+            width: 100%; padding: 14px; border-radius: 12px; border: none;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff;
+            font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s ease;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4); }
+
+        .footer { text-align: center; margin-top: 20px; font-size: 12px; color: #9ca3af; }
+        .success-message { display: none; text-align: center; margin-top: 15px; font-weight: 600; animation: fadeIn 0.5s ease; }
+
+        .toggle-theme { position: absolute; top: 20px; right: 20px; cursor: pointer; background: #2563eb; color: #fff; border: none; padding: 8px 12px; border-radius: 8px; font-weight: bold; }
+    </style>
+</head>
+<body class="dark">
+
+<button class="toggle-theme" id="themeToggle">Toggle Dark/Light</button>
+
+<div class="container">
+    <div class="header">
+        <h1>Order System</h1>
+        <p>Enter your email and order details and we will contact you</p>
+    </div>
+
+    <form id="orderForm" method="POST" action="/submit">
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="order">Order Details</label>
+            <textarea id="order" name="order" placeholder="Write your order here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Submit Order</button>
+    </form>
+
+    <div class="success-message" id="successMessage">Your order has been submitted successfully. Thank you for contacting us.</div>
+
+    <div class="footer">© 2026 All rights reserved to Xbyit</div>
+</div>
+
+<script>
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        if(body.classList.contains('dark')) {
+            body.classList.remove('dark');
+            body.classList.add('light');
+        } else {
+            body.classList.remove('light');
+            body.classList.add('dark');
+        }
+    });
+
+    
+    const form = document.getElementById('orderForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function() {
+       
+    });
+</script>
+
+</body>
+</html>
