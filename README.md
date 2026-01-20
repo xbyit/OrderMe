@@ -35,7 +35,7 @@ project/
 │   ├── index.html          # Home page
 │   ├── order.html          # Order form page
 │   └── submit.html         # Success page after submission
-
+└──
 ```
 
 ---
