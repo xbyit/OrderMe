@@ -1,6 +1,6 @@
 # 🚀 OrederMe - Custom Programming Services
 
-!OrederMe Banner](https://img.shields.io/badge/DZDev-Custom%20Programming-blue)
+![OrederMe Banner](https://img.shields.io/badge/OrderME-Custom%20Programming-blue)
 
 **OrederMe** is a project that offers custom programming services 💻, allowing clients to request web applications 🌐, desktop software 🖥️, or automation scripts 🤖 tailored to their specific needs.
 
